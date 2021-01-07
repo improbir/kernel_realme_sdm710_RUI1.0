@@ -500,6 +500,9 @@ static int tz_start(struct devfreq *devfreq)
 					struct msm_adreno_extended_profile,
 					profile);
 
+	if (!tz_devfreq_g)
+		tz_devfreq_g = devfreq;
+	
 	/*
 	 * Assuming that we have only one instance of the adreno device
 	 * connected to this governor,
