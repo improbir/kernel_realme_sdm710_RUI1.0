@@ -16,6 +16,7 @@
 #include <linux/math64.h>
 #include <linux/spinlock.h>
 #include <linux/slab.h>
+#include <linux/input.h>
 #include <linux/io.h>
 #include <linux/ftrace.h>
 #include <linux/mm.h>
