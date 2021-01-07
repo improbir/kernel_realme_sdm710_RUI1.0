@@ -841,6 +841,8 @@ static int __init msm_adreno_tz_init(void)
 	if (workqueue == NULL)
 		return -ENOMEM;
 
+	gpu_ib_init();
+	
 	return devfreq_add_governor(&msm_adreno_tz);
 }
 subsys_initcall(msm_adreno_tz_init);
