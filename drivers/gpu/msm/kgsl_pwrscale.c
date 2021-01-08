@@ -198,7 +198,7 @@ void kgsl_pwrscale_update(struct kgsl_device *device)
 	device->pwrscale.next_governor_call = ktime_add_us(t,
 			KGSL_GOVERNOR_CALL_INTERVAL);
 
-	/* to call srcu_notifier_call_chain() from a kernel thread */
+	/* to call update_devfreq() from a kernel thread */
 	if (device->state != KGSL_STATE_SLUMBER)
 		queue_work(device->pwrscale.devfreq_wq,
 			&device->pwrscale.devfreq_notify_ws);
