@@ -984,7 +984,6 @@ int kgsl_pwrscale_init(struct device *dev, const char *governor)
 	struct kgsl_pwrscale *pwrscale;
 	struct kgsl_pwrctrl *pwr;
 	struct devfreq *devfreq;
-	struct devfreq *bus_devfreq;
 	struct msm_adreno_extended_profile *gpu_profile;
 	struct devfreq_dev_profile *profile;
 	struct devfreq_msm_adreno_tz_data *data;
