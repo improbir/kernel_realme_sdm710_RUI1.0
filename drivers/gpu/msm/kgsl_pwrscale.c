@@ -1087,7 +1087,6 @@ int kgsl_pwrscale_init(struct device *dev, const char *governor)
 	if (IS_ERR(pwrscale->cooling_dev))
 		pwrscale->cooling_dev = NULL;
 
-	pwrscale->gpu_profile.bus_devfreq = NULL;
 	if (data->bus.num) {
 		pwrscale->bus_profile.profile.max_state
 					= pwr->num_pwrlevels - 1;
