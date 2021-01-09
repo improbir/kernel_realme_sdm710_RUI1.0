@@ -1,4 +1,4 @@
-1. - 1. 1. menu "Android"
+menu "Android"
 
 config ANDROID
 	bool "Android Drivers"
