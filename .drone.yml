@@ -1,5 +1,5 @@
 kind: pipeline
-name: kernel_xiaomi_raphael
+name: kernel_realme_sdm710
 
 platform:
   os: linux
@@ -9,7 +9,7 @@ clone:
   depth: 1
 
 steps:
-  - name: immensity_kernel
+  - name: spiral_kernel
     image: ubuntu:latest
     environment:
       CI_CHANNEL_ID:
