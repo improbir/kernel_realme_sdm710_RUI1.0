@@ -24,4 +24,4 @@ steps:
       - bash kernel.sh --proton
     when:
       branch:
-        - test
+        - ten
