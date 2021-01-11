@@ -22,6 +22,3 @@ steps:
       - git clone --depth=1 https://github.com/viciouspup/Drone-scripts.git script && cd script
       - bash setup-drone.sh --proton
       - bash build-kernel.sh --proton
-    when:
-      branch:
-        - ten
