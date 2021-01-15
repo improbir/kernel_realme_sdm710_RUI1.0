@@ -32,8 +32,6 @@
 #include <drm/drm_plane_helper.h>
 #include <linux/sync_file.h>
 #include <linux/devfreq_boost.h>
-#include <linux/devfreq_boost_ddr.h>
-#include <linux/devfreq_boost_gpu.h>
 
 #include "drm_crtc_internal.h"
 
@@ -1906,14 +1904,6 @@ int drm_mode_atomic_ioctl(struct drm_device *dev,
 	if ((arg->flags & DRM_MODE_ATOMIC_TEST_ONLY) &&
 			(arg->flags & DRM_MODE_PAGE_FLIP_EVENT))
 		return -EINVAL;
-
-	if (!(arg->flags & DRM_MODE_ATOMIC_TEST_ONLY)) {
-		cpu_input_boost_kick_flex();
-		devfreq_boost_gpu_kick_flex(DEVFREQ_MSM_GPUBW);
-		devfreq_boost_ddr_kick_flex(DEVFREQ_MSM_DDRBW);
-		devfreq_boost_kick_flex(DEVFREQ_MSM_CPUBW);
-	}
-	
 	drm_modeset_acquire_init(&ctx, 0);
 
 	state = drm_atomic_state_alloc(dev);
