@@ -2,7 +2,7 @@
 /*
  * Copyright (C) 2018-2019 Sultan Alsawaf <sultan@kerneltoast.com>.
  */
-// Copyright (C) 2019 all additions Erik Müller <pappschlumpf@xda>
+
 #define pr_fmt(fmt) "devfreq_boost: " fmt
 
 #include <linux/devfreq_boost.h>
@@ -299,7 +299,7 @@ static int __init devfreq_boost_init(void)
 	for (i = 0; i < DEVFREQ_MAX; i++) {
 		struct boost_dev *b = d->devices + i;
 
-		thread[i] = kthread_run_low_power(devfreq_boost_thread, b,
+		thread[i] = kthread_run(devfreq_boost_thread, b,
 					"devfreq_boostd/%d", i);
 		if (IS_ERR(thread[i])) {
 			ret = PTR_ERR(thread[i]);
