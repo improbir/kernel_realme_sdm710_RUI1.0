@@ -49,6 +49,14 @@ config OPPO_HANS
         default n
         ---help---
           Key events (signal/network package/binder) report to HAS native.
+	  
+	  config SYNC_DEBUG
+	bool "Debug software synchronization"
+	default n
+	depends on SYNC
+	---help---
+	  This makes the sync driver keep track of fence names.
+	  
 #endif
 
 source "drivers/staging/android/ion/Kconfig"
