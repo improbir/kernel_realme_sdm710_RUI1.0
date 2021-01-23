@@ -53,8 +53,7 @@ static struct devfreq_dev_status last_status = { .private_data = &last_xstats };
  */
 void kgsl_pwrscale_sleep(struct kgsl_device *device)
 {
-
-	if (!device->pwrscale.enabled)
+       if (!device->pwrscale.enabled)
 		return;
 	device->pwrscale.on_time = 0;
 
