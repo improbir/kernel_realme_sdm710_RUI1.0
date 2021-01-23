@@ -507,11 +507,6 @@ struct kgsl_sync_fence_cb *kgsl_sync_fence_async_wait(int fd,
 	if (fence == NULL)
 		return ERR_PTR(-EINVAL);
 
-	if (sync_fence_signaled(fence)) {
-		sync_fence_put(fence);
-		return NULL;
-	}
-	
 	/* create the callback */
 	kcb = kzalloc(sizeof(*kcb), GFP_ATOMIC);
 	if (kcb == NULL) {
