@@ -529,6 +529,10 @@ int kgsl_drawobj_sync_add_sync(struct kgsl_device *device,
 	struct kgsl_drawobj_sync *syncobj,
 	struct kgsl_cmd_syncpoint *sync)
 {
+	union {
+		struct kgsl_cmd_syncpoint_timestamp sync_timestamp;
+		struct kgsl_cmd_syncpoint_fence sync_fence;
+	} data;
 	void *priv;
 	int psize;
 	struct kgsl_drawobj *drawobj = DRAWOBJ(syncobj);
