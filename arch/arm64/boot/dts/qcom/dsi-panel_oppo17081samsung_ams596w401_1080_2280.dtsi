@@ -59,6 +59,9 @@
 		qcom,mdss-dsi-panel-status-command-state = "dsi_hs_mode";
 		qcom,mdss-dsi-panel-status-value = <0x9C>;
 
+		qcom,ulps-enabled;
+		qcom,suspend-ulps-enabled;
+
 		qcom,mdss-dsi-display-timings {
 			timing@0{
 				qcom,mdss-dsi-panel-width = <1080>;
