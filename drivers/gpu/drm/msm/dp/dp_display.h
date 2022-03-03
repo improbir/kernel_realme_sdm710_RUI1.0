@@ -51,4 +51,7 @@ struct dp_display {
 int dp_display_get_num_of_displays(void);
 int dp_display_get_displays(void **displays, int count);
 bool dp_connector_mode_needs_full_range(void *display);
+
+int dp_display_set_power(struct drm_connector *connector,
+	int power_mode, void *display);
 #endif /* _DP_DISPLAY_H_ */
