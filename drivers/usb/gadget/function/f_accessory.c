@@ -1346,7 +1346,7 @@ static int acc_setup(void)
 		goto err_zap_ptr;
 
 	/* _acc_dev must be set before calling usb_gadget_register_driver */
-	_acc_dev = dev;
+       //	_acc_dev = dev;
 
 	return 0;
 
