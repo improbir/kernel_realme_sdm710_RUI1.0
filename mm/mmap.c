@@ -2914,6 +2914,7 @@ static void unmap_region(struct mm_struct *mm,
 	struct vm_area_struct *next = prev ? prev->vm_next : mm->mmap;
 #endif
 	struct mmu_gather tlb;
+	struct vm_area_struct *cur_vma;
 
 #if defined(VENDOR_EDIT) && defined(CONFIG_VIRTUAL_RESERVE_MEMORY)
 	/* Kui.Zhang@PSW.TEC.KERNEL.Performance, 2019/03/18,
